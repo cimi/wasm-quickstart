@@ -5,7 +5,9 @@
 wasm/*.js
 wasm/*.wasm
 public/*.wasm
+public/smhasher
 src/wasm-loader.js
+src/SMHasher.js
 
 # dependencies
 /node_modules

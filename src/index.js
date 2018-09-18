@@ -1,14 +1,11 @@
 import './index.css';
-import WasmLoader from "./wasm-loader";
-import registerServiceWorker from './registerServiceWorker';
+import WasmLoader from "./SMHasher";
 
 window.onload = () => {
-  WasmLoader({ wasmBinaryFile: "calculator.wasm" }).then(WasmModule => {
-    WasmModule.addOnPostRun(() => {
-      const calculator = new WasmModule.Calculator();
-      console.log(calculator.factorial(11));
-    });
-  });
-};
+  const locateFile = (path, prefix) => {
+    console.log(path, prefix);
+    return 'smhasher/SMHasher.wasm';
+  }
 
-registerServiceWorker();
+  WasmLoader({ locateFile });
+};
